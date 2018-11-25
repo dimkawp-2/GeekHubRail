@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    MathTasks (1.0.0)
     actioncable (5.2.1)
       actionpack (= 5.2.1)
       nio4r (~> 2.0)
@@ -211,6 +212,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  MathTasks (~> 1.0)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)

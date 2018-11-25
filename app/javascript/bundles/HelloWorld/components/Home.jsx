@@ -15,25 +15,47 @@ export default class HelloWorld extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
-    this.state = { name: this.props.name };
+    this.state = {
+      name: this.props.name,
+      task: this.props.task
+    };
   }
 
   updateName = (name) => {
     this.setState({ name });
   };
+  handleLogin = () => {
+    console.log('handleLogin');
+    const data = {
+        params: 'params'
+    }
 
+    fetch('http://localhost:3000/test_url', {
+        method: 'get',
+        headers: {
+            'Access-Control-Allow-Origin':'*',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+        })
+  }
   render() {
     return (
       <div>
         <h3>
           Hello, {this.state.name}!
         </h3>
+        <p>SUM: {this.state.task.summ}</p>
         <hr />
         <form >
           <label htmlFor="name">
-            dsa as daSay hello to:
+            Hello:
           </label>
-          <Button>Click Here</Button>
+          <Button onClick={this.handleLogin}>Click Here</Button>
           <input
             id="name"
             type="text"
