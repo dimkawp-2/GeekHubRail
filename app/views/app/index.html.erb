@@ -1,0 +1,117 @@
+<div class="ui container">
+  <% #react_component("Home", props: { name: "User" }) %>
+  <h1>MathTasks</h1>
+  <% flash.each do |key, message| %>
+      <% if key == 'error' %>
+          <div class="ui warning message">
+            <i class="close icon"></i>
+            <div class="header">
+              <%= key %>
+            </div>
+            <%= message %>
+          </div>
+          <% else %>
+          <div class="ui info message">
+            <i class="close icon"></i>
+            <div class="header">
+              Result
+            </div>
+            <ul class="list">
+              <p class="<%= key %>"><%= message %></p>
+            </ul>
+          </div>
+      <% end %>
+  <% end %>
+  <hr>
+  <div class="ui top attached tabular menu">
+    <a class="item" data-tab="task-1">Task_1sum</a>
+    <a class="item" data-tab="task-2">Task_1diff</a>
+    <a class="item" data-tab="task-3">Task_1comp</a>
+    <a class="item" data-tab="task-4">Task_2</a>
+    <a class="item" data-tab="task-5">Task_3</a>
+    <a class="item" data-tab="task-6">Task_4</a>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-1">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_1_sum" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="x" placeholder="x...">
+      </div>
+      <div class="ui input">
+        <input type="number" name="y" placeholder="y...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-2">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_1_diff" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="x" placeholder="x...">
+      </div>
+      <div class="ui input">
+        <input type="number" name="y" placeholder="y...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-3">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_1_comp" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="x" placeholder="x...">
+      </div>
+      <div class="ui input">
+        <input type="number" name="y" placeholder="y...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-4">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_2" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="x" placeholder="x...">
+      </div>
+      <div class="ui input">
+        <input type="number" name="y" placeholder="y...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-5">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_3" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="range" placeholder="range...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="task-6">
+    <div class="ui segment">
+      <p>description</p>
+    </div>
+    <form action="/task_4" method="post" class="form-inline">
+      <div class="ui input">
+        <input type="number" name="x" placeholder="x...">
+      </div>
+      <div class="ui input">
+        <input type="number" name="y" placeholder="y...">
+      </div>
+      <button class="positive ui button" type="submit">Result</button>
+    </form>
+  </div>
+</div>
+
+
